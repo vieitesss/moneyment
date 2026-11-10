@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="new_income"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_income"
+        android:shortcutShortLabel="@string/new_income">
+        <intent
+            android:action="eu.vieitesss.moneyment.NEW_INCOME"
+            android:targetClass="eu.vieitesss.moneyment.ui.MainActivity"
+            android:targetPackage="eu.vieitesss.moneyment" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="new_expense"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_expense"
+        android:shortcutShortLabel="@string/new_expense">
+        <intent
+            android:action="eu.vieitesss.moneyment.NEW_EXPENSE"
+            android:targetClass="eu.vieitesss.moneyment.ui.MainActivity"
+            android:targetPackage="eu.vieitesss.moneyment" />
+    </shortcut>
+</shortcuts>

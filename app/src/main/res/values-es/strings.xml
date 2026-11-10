@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_transactions">Movimientos</string>
+    <string name="tab_charts">Gráficos</string>
+    <string name="settings">Ajustes</string>
+    <string name="back">Atrás</string>
+
+    <string name="income">Ingreso</string>
+    <string name="expenses">Gastos</string>
+    <string name="difference">Diferencia</string>
+    <string name="new_expense">Nuevo gasto</string>
+    <string name="new_income">Nuevo ingreso</string>
+    <string name="edit_expense">Editar gasto</string>
+    <string name="edit_income">Editar ingreso</string>
+
+    <string name="previous_month">Mes anterior</string>
+    <string name="next_month">Mes siguiente</string>
+    <string name="no_transactions">No hay movimientos este mes</string>
+    <string name="all_categories">Todas las categorías</string>
+    <string name="all_accounts">Todas las cuentas</string>
+
+    <string name="amount">Importe</string>
+    <string name="category">Categoría</string>
+    <string name="account">Cuenta</string>
+    <string name="date">Fecha</string>
+    <string name="today">Hoy</string>
+    <string name="note_optional">Nota (opcional)</string>
+    <string name="save">Guardar</string>
+    <string name="clear">Vaciar</string>
+    <string name="delete">Eliminar</string>
+    <string name="undo">Deshacer</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">Aceptar</string>
+    <string name="form_cleared">Formulario vaciado</string>
+    <string name="transaction_deleted">Movimiento eliminado</string>
+    <string name="discard_title">¿Descartar los cambios?</string>
+    <string name="discard_text">El movimiento se queda como estaba.</string>
+    <string name="keep_editing">Seguir editando</string>
+    <string name="discard">Descartar</string>
+    <string name="save_failed">No se ha podido guardar. Inténtalo de nuevo.</string>
+    <string name="delete_title">¿Eliminar este movimiento?</string>
+
+    <string name="expenses_by_category">Gastos por categoría</string>
+    <string name="no_expenses">No hay gastos este mes</string>
+    <string name="income_vs_expenses">Ingresos y gastos, últimos 12 meses</string>
+
+    <string name="month_income_expenses">%1$s: ingresos %2$s; gastos %3$s.</string>
+
+    <string name="color_green">Verde</string>
+    <string name="color_orange">Naranja</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_brown">Marrón</string>
+    <string name="color_blue_grey">Gris azulado</string>
+    <string name="color_red">Rojo</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_purple">Morado</string>
+    <string name="color_cyan">Cian</string>
+    <string name="color_olive">Oliva</string>
+    <string name="color_deep_purple">Morado oscuro</string>
+    <string name="color_teal">Verde azulado</string>
+
+    <string name="expense_categories">Categorías de gasto</string>
+    <string name="income_categories">Categorías de ingreso</string>
+    <string name="accounts">Cuentas</string>
+    <string name="appearance">Aspecto</string>
+    <string name="theme">Tema</string>
+    <string name="language">Idioma</string>
+    <string name="system_default">Predeterminado del sistema</string>
+    <string name="light">Claro</string>
+    <string name="dark">Oscuro</string>
+    <string name="updates">Actualizaciones</string>
+    <string name="check_for_updates">Buscar actualizaciones</string>
+    <string name="version_name">Versión %1$s</string>
+    <string name="check_automatically">Buscar automáticamente</string>
+    <string name="update_available_title">La versión %1$s está disponible</string>
+    <string name="update">Actualizar</string>
+    <string name="later">Más tarde</string>
+    <string name="update_none">Tienes la última versión</string>
+    <string name="update_check_failed">No se ha podido buscar actualizaciones</string>
+    <string name="update_downloading">Descargando la actualización…</string>
+    <string name="update_failed">No se ha podido instalar la actualización</string>
+    <string name="categories_and_accounts">Categorías y cuentas</string>
+    <string name="backup">Copia de seguridad</string>
+    <string name="export_backup">Exportar copia</string>
+    <string name="export_backup_hint">Guarda todo en un archivo que puedes restaurar después</string>
+    <string name="import_backup">Restaurar copia</string>
+    <string name="import_backup_hint">Sustituye todos los datos por los de un archivo de copia</string>
+    <string name="export_csv">Exportar CSV</string>
+    <string name="export_csv_hint">Movimientos en un archivo de hoja de cálculo</string>
+    <string name="import_confirm_title">¿Sustituir todos los datos?</string>
+    <string name="import_confirm_text">Todo lo que hay ahora en la aplicación se elimina y se sustituye por el contenido del archivo de copia.</string>
+    <string name="replace">Sustituir</string>
+    <string name="export_done">Exportado</string>
+    <string name="import_done">Copia restaurada</string>
+    <string name="export_failed">La exportación ha fallado</string>
+    <string name="import_failed">Este archivo no es una copia válida</string>
+
+    <string name="archived">Archivadas</string>
+    <string name="archive">Archivar</string>
+    <string name="restore">Recuperar</string>
+    <string name="add">Añadir</string>
+    <string name="name">Nombre</string>
+    <string name="icon">Icono (emoji)</string>
+    <string name="new_category">Nueva categoría</string>
+    <string name="edit_category">Editar categoría</string>
+    <string name="new_account">Nueva cuenta</string>
+    <string name="edit_account">Editar cuenta</string>
+
+    <string name="cat_groceries">Supermercado</string>
+    <string name="cat_eating_out">Restaurantes</string>
+    <string name="cat_transport">Transporte</string>
+    <string name="cat_housing">Vivienda</string>
+    <string name="cat_bills">Facturas</string>
+    <string name="cat_health">Salud</string>
+    <string name="cat_shopping">Compras</string>
+    <string name="cat_leisure">Ocio</string>
+    <string name="cat_travel">Viajes</string>
+    <string name="cat_other">Otros</string>
+    <string name="cat_salary">Nómina</string>
+    <string name="cat_gift">Regalo</string>
+    <string name="cat_refund">Reembolso</string>
+    <string name="acc_cash">Efectivo</string>
+</resources>

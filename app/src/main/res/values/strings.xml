@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Moneyment</string>
+
+    <string name="tab_transactions">Transactions</string>
+    <string name="tab_charts">Charts</string>
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+    <string name="difference">Difference</string>
+    <string name="new_expense">New expense</string>
+    <string name="new_income">New income</string>
+    <string name="edit_expense">Edit expense</string>
+    <string name="edit_income">Edit income</string>
+
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    <string name="no_transactions">No transactions this month</string>
+    <string name="all_categories">All categories</string>
+    <string name="all_accounts">All accounts</string>
+
+    <string name="amount">Amount</string>
+    <string name="category">Category</string>
+    <string name="account">Account</string>
+    <string name="date">Date</string>
+    <string name="today">Today</string>
+    <string name="note_optional">Note (optional)</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="undo">Undo</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="form_cleared">Form cleared</string>
+    <string name="transaction_deleted">Transaction deleted</string>
+    <string name="discard_title">Discard changes?</string>
+    <string name="discard_text">The transaction stays as it was.</string>
+    <string name="keep_editing">Keep editing</string>
+    <string name="discard">Discard</string>
+    <string name="save_failed">Could not save. Try again.</string>
+    <string name="delete_title">Delete this transaction?</string>
+
+    <string name="expenses_by_category">Expenses by category</string>
+    <string name="no_expenses">No expenses this month</string>
+    <string name="income_vs_expenses">Income and expenses, last 12 months</string>
+
+    <string name="month_income_expenses">%1$s: income %2$s; expenses %3$s.</string>
+
+    <string name="color_green">Green</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_brown">Brown</string>
+    <string name="color_blue_grey">Blue grey</string>
+    <string name="color_red">Red</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="color_olive">Olive</string>
+    <string name="color_deep_purple">Deep purple</string>
+    <string name="color_teal">Teal</string>
+
+    <string name="expense_categories">Expense categories</string>
+    <string name="income_categories">Income categories</string>
+    <string name="accounts">Accounts</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="system_default">System default</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="updates">Updates</string>
+    <string name="check_for_updates">Check for updates</string>
+    <string name="version_name">Version %1$s</string>
+    <string name="check_automatically">Check automatically</string>
+    <string name="update_available_title">Version %1$s is available</string>
+    <string name="update">Update</string>
+    <string name="later">Later</string>
+    <string name="update_none">You have the latest version</string>
+    <string name="update_check_failed">Could not check for updates</string>
+    <string name="update_downloading">Downloading the update…</string>
+    <string name="update_failed">Could not install the update</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_spanish" translatable="false">Español</string>
+    <string name="categories_and_accounts">Categories and accounts</string>
+    <string name="backup">Backup</string>
+    <string name="export_backup">Export backup</string>
+    <string name="export_backup_hint">Save everything to a file you can restore later</string>
+    <string name="import_backup">Restore backup</string>
+    <string name="import_backup_hint">Replace all data with a backup file</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="export_csv_hint">Transactions as a spreadsheet file</string>
+    <string name="import_confirm_title">Replace all data?</string>
+    <string name="import_confirm_text">Everything in the app now is deleted and replaced with the content of the backup file.</string>
+    <string name="replace">Replace</string>
+    <string name="export_done">Exported</string>
+    <string name="import_done">Backup restored</string>
+    <string name="export_failed">Export failed</string>
+    <string name="import_failed">This file is not a valid backup</string>
+
+    <string name="archived">Archived</string>
+    <string name="archive">Archive</string>
+    <string name="restore">Restore</string>
+    <string name="add">Add</string>
+    <string name="name">Name</string>
+    <string name="icon">Icon (emoji)</string>
+    <string name="new_category">New category</string>
+    <string name="edit_category">Edit category</string>
+    <string name="new_account">New account</string>
+    <string name="edit_account">Edit account</string>
+
+    <string name="cat_groceries">Groceries</string>
+    <string name="cat_eating_out">Eating out</string>
+    <string name="cat_transport">Transport</string>
+    <string name="cat_housing">Housing</string>
+    <string name="cat_bills">Bills</string>
+    <string name="cat_health">Health</string>
+    <string name="cat_shopping">Shopping</string>
+    <string name="cat_leisure">Leisure</string>
+    <string name="cat_travel">Travel</string>
+    <string name="cat_other">Other</string>
+    <string name="cat_salary">Salary</string>
+    <string name="cat_gift">Gift</string>
+    <string name="cat_refund">Refund</string>
+    <string name="acc_cash">Cash</string>
+</resources>
