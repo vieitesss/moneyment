@@ -32,6 +32,10 @@ _Avoid_: Payment method, wallet, source, pot
 To retire a Category or Account so it can no longer be chosen for new Transactions while staying on existing ones.
 _Avoid_: Delete, hide, disable
 
+**Draft**:
+A new Expense or Income the person has started filling in but not yet saved. There is at most one Draft per kind, and it lasts only while the app stays running. Changes to an already saved Transaction are never a Draft.
+_Avoid_: Pending transaction, unsaved transaction
+
 **Note**:
 Optional free text the person attaches to a Transaction.
 _Avoid_: Description, comment, memo
