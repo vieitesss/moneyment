@@ -7,6 +7,7 @@ A personal money log for one person on one phone. It records money spent and ear
 **Transaction**:
 A single record of money spent or earned on a given day. It is either an Expense or an Income.
 _Avoid_: Entry, movement, operation, record
+_Spanish UI_: Movimiento. It is the usual Spanish word for this; "movement" stays avoided in English.
 
 **Expense**:
 A Transaction where money leaves the person.
