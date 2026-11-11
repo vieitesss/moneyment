@@ -129,6 +129,33 @@ class DomainTest {
     }
 
     @Test
+    fun backupRejectsValuesTheAppCouldNeverHaveWritten() {
+        fun rejects(s: Snapshot) {
+            assertThrows(IllegalArgumentException::class.java) { decodeBackup(encodeBackup(s)) }
+        }
+        val one = tx(1, Kind.EXPENSE, 100, 1, "2026-01-01")
+        decodeBackup(encodeBackup(snapshot.copy(transactions = listOf(one.copy(amountCents = 999_999_999)))))
+        rejects(snapshot.copy(transactions = listOf(one.copy(amountCents = 1_000_000_000))))
+        rejects(snapshot.copy(transactions = listOf(one.copy(amountCents = Long.MAX_VALUE))))
+        rejects(snapshot.copy(transactions = listOf(one.copy(date = LocalDate.of(1899, 12, 31)))))
+        rejects(snapshot.copy(transactions = listOf(one.copy(date = LocalDate.of(2101, 1, 1)))))
+        rejects(snapshot.copy(transactions = listOf(one.copy(note = "x".repeat(10_001)))))
+        rejects(snapshot.copy(categories = listOf(food, fun_.copy(name = "x".repeat(1_001)), salary)))
+        rejects(snapshot.copy(categories = listOf(food.copy(emoji = "x".repeat(65)), fun_, salary)))
+        rejects(snapshot.copy(accounts = listOf(cash, card.copy(name = "x".repeat(1_001)))))
+        rejects(snapshot.copy(transactions = (1L..100_001L).map { one.copy(id = it) }))
+    }
+
+    @Test
+    fun backupFileTooLargeIsRejectedWhileReading() {
+        assertEquals("héllo", readBackupText("héllo".byteInputStream()))
+        val endless = object : java.io.InputStream() {
+            override fun read(): Int = 'x'.code
+        }
+        assertThrows(IllegalArgumentException::class.java) { readBackupText(endless) }
+    }
+
+    @Test
     fun backupRejectsNonPositiveIds() {
         val zeroCategory = snapshot.copy(categories = listOf(food.copy(id = 0), fun_, salary))
         assertThrows(IllegalArgumentException::class.java) { decodeBackup(encodeBackup(zeroCategory)) }

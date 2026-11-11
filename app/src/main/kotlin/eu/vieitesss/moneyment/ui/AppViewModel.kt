@@ -33,6 +33,7 @@ import eu.vieitesss.moneyment.domain.defaultAccountId
 import eu.vieitesss.moneyment.domain.encodeBackup
 import eu.vieitesss.moneyment.domain.encodeCsv
 import eu.vieitesss.moneyment.domain.parseAmount
+import eu.vieitesss.moneyment.domain.readBackupText
 import eu.vieitesss.moneyment.update.INSTALL_STATUS
 import eu.vieitesss.moneyment.update.Release
 import eu.vieitesss.moneyment.update.SNOOZE_MS
@@ -497,9 +498,8 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
             val restored = withContext(Dispatchers.IO) {
                 runCatching {
                     val text = getApplication<Application>().contentResolver.openInputStream(uri)!!
-                        .use { it.readBytes().decodeToString() }
+                        .use { readBackupText(it) }
                     store.replaceAll(decodeBackup(text))
-                    store.snapshot()
                 }.getOrNull()
             }
             if (restored == null) {

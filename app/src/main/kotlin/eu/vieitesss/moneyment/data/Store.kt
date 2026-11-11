@@ -86,8 +86,11 @@ class Store(context: Context) : SQLiteOpenHelper(context, "moneyment.db", null, 
         writableDatabase.delete("txn", "id = ?", arrayOf(id.toString()))
     }
 
-    /** Deletes everything and stores [snapshot] instead, keeping its ids. */
-    fun replaceAll(snapshot: Snapshot) {
+    /**
+     * Deletes everything and stores [snapshot] instead, keeping its ids. Returns what was
+     * stored, read back before committing: if that read throws, the old data stays.
+     */
+    fun replaceAll(snapshot: Snapshot): Snapshot {
         val db = writableDatabase
         db.beginTransaction()
         try {
@@ -95,7 +98,9 @@ class Store(context: Context) : SQLiteOpenHelper(context, "moneyment.db", null, 
             snapshot.categories.forEach { save("category", it.id, it.values()) }
             snapshot.accounts.forEach { save("account", it.id, it.values()) }
             snapshot.transactions.forEach { save("txn", it.id, it.values()) }
+            val stored = snapshot()
             db.setTransactionSuccessful()
+            return stored
         } finally {
             db.endTransaction()
         }
