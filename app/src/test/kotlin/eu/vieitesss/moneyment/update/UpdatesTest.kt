@@ -45,8 +45,17 @@ class UpdatesTest {
 
     @Test
     fun tagWithoutTheLeadingVStillParses() {
-        val plain = """{"tag_name":"0.1.1","assets":[{"name":"a.apk","browser_download_url":"https://x/a.apk"}]}"""
+        val plain = """{"tag_name":"0.1.1","assets":[{"name":"a.apk","browser_download_url":"https://github.com/vieitesss/moneyment/releases/download/0.1.1/a.apk"}]}"""
         assertEquals("0.1.1", parseRelease(plain)?.version)
+    }
+
+    @Test
+    fun anApkServedFromElsewhereIsNoUpdate() {
+        fun release(url: String) = """{"tag_name":"v9.0.0","assets":[{"name":"a.apk","browser_download_url":"$url"}]}"""
+        assertNull(parseRelease(release("https://evil.example/moneyment/releases/download/v9.0.0/a.apk")))
+        assertNull(parseRelease(release("https://github.com/someone/else/releases/download/v9.0.0/a.apk")))
+        assertNull(parseRelease(release("http://github.com/vieitesss/moneyment/releases/download/v9.0.0/a.apk")))
+        assertNull(parseRelease(release("https://github.com.evil.example/vieitesss/moneyment/releases/download/v9.0.0/a.apk")))
     }
 
     @Test

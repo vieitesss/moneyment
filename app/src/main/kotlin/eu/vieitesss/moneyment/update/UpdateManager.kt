@@ -14,6 +14,9 @@ import java.net.URL
 /** Where the newest release is announced. */
 private const val LATEST_RELEASE = "https://api.github.com/repos/vieitesss/moneyment/releases/latest"
 
+/** No APK of this app comes close to this size; a bigger download is not ours and would fill the phone. */
+private const val MAX_APK_BYTES = 100L * 1024 * 1024
+
 /** The system tells us how the install went by sending this broadcast back to the app. */
 const val INSTALL_STATUS = "eu.vieitesss.moneyment.INSTALL_STATUS"
 
@@ -52,6 +55,7 @@ class UpdateManager(private val context: Context) {
             connection.setRequestProperty("User-Agent", "Moneyment")
             if (connection.responseCode != HttpURLConnection.HTTP_OK) error("HTTP ${connection.responseCode}")
             val total = connection.contentLengthLong
+            if (total > MAX_APK_BYTES) error("APK too large")
             connection.inputStream.use { input ->
                 target.outputStream().use { output ->
                     val buffer = ByteArray(8 * 1024)
@@ -61,6 +65,7 @@ class UpdateManager(private val context: Context) {
                         if (read < 0) break
                         output.write(buffer, 0, read)
                         copied += read
+                        if (copied > MAX_APK_BYTES) error("APK too large")
                         onProgress(if (total > 0) copied.toFloat() / total else null)
                     }
                 }
@@ -92,6 +97,9 @@ class UpdateManager(private val context: Context) {
     fun install(file: File) {
         val installer = context.packageManager.packageInstaller
         val params = PackageInstaller.SessionParams(PackageInstaller.SessionParams.MODE_FULL_INSTALL)
+        // The phone then refuses an APK of any other app, and for this app it already demands
+        // the same signing key and a version that is not older.
+        params.setAppPackageName(context.packageName)
         val sessionId = installer.createSession(params)
         var committed = false
         try {

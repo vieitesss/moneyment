@@ -8,12 +8,15 @@ const val CHECK_INTERVAL_MS = 24L * 60 * 60 * 1000
 /** How long "Later" keeps a version out of the way. */
 const val SNOOZE_MS = 24L * 60 * 60 * 1000
 
+/** The only place an update may come from: the release downloads of this app's own repository. */
+private const val RELEASE_DOWNLOADS = "https://github.com/vieitesss/moneyment/releases/download/"
+
 /** A published release: its version without the leading "v", and the APK to install. */
 data class Release(val version: String, val apkUrl: String)
 
 /**
- * The release in GitHub's "latest release" answer, or null when the answer has no tag or no
- * APK asset. Drafts and pre-releases never reach us: the endpoint already leaves them out.
+ * The release in GitHub's "latest release" answer, or null when the answer has no tag, no
+ * APK asset, or an APK that is not served from [RELEASE_DOWNLOADS]. Drafts and pre-releases never reach us: the endpoint already leaves them out.
  */
 fun parseRelease(json: String): Release? = runCatching {
     val root = JSONObject(json)
@@ -23,7 +26,8 @@ fun parseRelease(json: String): Release? = runCatching {
         .map { assets.getJSONObject(it) }
         .firstOrNull { it.optString("name").endsWith(".apk") }
         ?: return null
-    val url = apk.optString("browser_download_url").ifEmpty { return null }
+    val url = apk.optString("browser_download_url")
+    if (!url.startsWith(RELEASE_DOWNLOADS)) return null
     Release(version, url)
 }.getOrNull()
 
