@@ -68,7 +68,9 @@ data class FormState(
     val date: LocalDate,
     val note: String,
 ) {
-    val canSave: Boolean get() = parseAmount(amountText) != null && categoryId != null
+    val amountValid: Boolean get() = parseAmount(amountText) != null
+    val categoryValid: Boolean get() = categoryId != null
+    val canSave: Boolean get() = amountValid && categoryValid
 }
 
 data class Editing(val original: Transaction, val initial: FormState, val form: FormState) {

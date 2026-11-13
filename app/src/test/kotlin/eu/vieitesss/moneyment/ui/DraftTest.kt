@@ -49,4 +49,16 @@ class DraftTest {
         val repaired = repairedDraft(form, data(archivedCategory = true, archivedAccount = true), null)
         assertEquals(form.copy(categoryId = null, accountId = cash.id), repaired)
     }
+
+    @Test
+    fun saveNeedsAnAmountAboveZeroAndACategory() {
+        val form = draft(groceries.id)
+        assertEquals(true, form.canSave)
+        listOf("", "0", "0,00", ",").forEach {
+            assertEquals(it, false, form.copy(amountText = it).amountValid)
+            assertEquals(it, false, form.copy(amountText = it).canSave)
+        }
+        assertEquals(false, form.copy(categoryId = null).categoryValid)
+        assertEquals(false, form.copy(categoryId = null).canSave)
+    }
 }

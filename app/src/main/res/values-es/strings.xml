@@ -21,6 +21,10 @@
 
     <string name="amount">Importe</string>
     <string name="category">Categoría</string>
+    <string name="amount_missing">Escribe un importe mayor que 0</string>
+    <string name="category_missing">Elige una categoría</string>
+    <string name="required">Obligatorio</string>
+    <string name="filled">Completado</string>
     <string name="account">Cuenta</string>
     <string name="date">Fecha</string>
     <string name="today">Hoy</string>

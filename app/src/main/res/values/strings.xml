@@ -23,6 +23,10 @@
 
     <string name="amount">Amount</string>
     <string name="category">Category</string>
+    <string name="amount_missing">Enter an amount above 0</string>
+    <string name="category_missing">Choose a category</string>
+    <string name="required">Required</string>
+    <string name="filled">Filled</string>
     <string name="account">Account</string>
     <string name="date">Date</string>
     <string name="today">Today</string>

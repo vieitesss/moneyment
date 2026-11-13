@@ -90,6 +90,10 @@ fun expenseColor(): Color = if (LocalDark.current) Color(0xFFEF9A9A) else Color(
 @Composable
 fun incomeColor(): Color = if (LocalDark.current) Color(0xFFA5D6A7) else Color(0xFF2E7D32)
 
+/** The green of the check on a required form field that is correctly filled. */
+@Composable
+fun filledColor(): Color = if (LocalDark.current) Color(0xFF81C784) else Color(0xFF2E7D32)
+
 private val builtinLabels = mapOf(
     "groceries" to R.string.cat_groceries,
     "eating_out" to R.string.cat_eating_out,
