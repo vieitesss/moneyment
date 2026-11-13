@@ -30,12 +30,12 @@
     <string name="today">Hoy</string>
     <string name="note_optional">Nota (opcional)</string>
     <string name="save">Guardar</string>
-    <string name="clear">Vaciar</string>
+    <string name="clear">Limpiar</string>
     <string name="delete">Eliminar</string>
     <string name="undo">Deshacer</string>
     <string name="cancel">Cancelar</string>
     <string name="ok">Aceptar</string>
-    <string name="form_cleared">Formulario vaciado</string>
+    <string name="form_cleared">Formulario limpiado</string>
     <string name="transaction_deleted">Movimiento eliminado</string>
     <string name="discard_title">¿Descartar los cambios?</string>
     <string name="discard_text">El movimiento se queda como estaba.</string>
